@@ -10,15 +10,26 @@ import android.view.View;
 
 
 public class SquareView extends SurfaceView implements View.OnTouchListener {
-    Square[] squares = new Square[16];
+    private Square square;
+    private SquareBoard board;
+    private float screenHeight;
+    private float screenWidth;
 
     public SquareView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        //get screen dimensions
+        screenHeight = context.getResources().getDisplayMetrics().heightPixels;
+        screenWidth = context.getResources().getDisplayMetrics().widthPixels;
+
+
+        setWillNotDraw(false);
+
+        this.square = new Square(2, 50, 50);
     }
 
     protected void onDraw(Canvas canvas) {
-        squares[0] = new Square(0,30,30);
-        squares[0].draw(canvas);
+        square.draw(canvas);
         invalidate();
     }
 
@@ -28,8 +39,7 @@ public class SquareView extends SurfaceView implements View.OnTouchListener {
         float x = event.getX();
         float y = event.getY();
 
-        squares[0].setCoord(x,y);
-
+        square.setCoord(x,y);
         invalidate();
 
         return false;

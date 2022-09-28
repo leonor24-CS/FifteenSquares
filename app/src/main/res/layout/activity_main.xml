@@ -8,8 +8,9 @@
 
     <com.example.fifteensquares.SquareView
         android:id="@+id/squareView"
-        android:layout_width="352dp"
-        android:layout_height="370dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#474646"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
