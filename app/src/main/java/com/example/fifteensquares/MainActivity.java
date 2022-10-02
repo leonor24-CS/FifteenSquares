@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.SurfaceView;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
         SquareView mainView = findViewById(R.id.squareView);
         mainView.setOnTouchListener(mainView);
+
+        Button reset = findViewById(R.id.reset);
+        reset.setOnClickListener(mainView);
 
     }
 }
