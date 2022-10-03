@@ -1,4 +1,9 @@
 package com.example.fifteensquares;
+/**
+ * SquareView
+ *
+ *
+ */
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -25,9 +30,10 @@ public class SquareView extends SurfaceView implements View.OnTouchListener, Vie
         screenWidth = context.getResources().getDisplayMetrics().widthPixels;
 
 
-        setWillNotDraw(false);
-        this.board = new SquareBoard(screenHeight, screenWidth);
-        //this.square = new Square(2, 50, 50, screenWidth, screenHeight);
+        setWillNotDraw(false); //important line to let the canvas be drawn on
+
+        this.board = new SquareBoard(screenHeight, screenWidth); //initialize a new board variable
+
     }
 
     protected void onDraw(Canvas canvas) {
@@ -42,7 +48,7 @@ public class SquareView extends SurfaceView implements View.OnTouchListener, Vie
         float x = event.getX();
         float y = event.getY();
 
-        board.checkBounds(x, y);
+        board.swapSquares(x, y);
         //square.setCoord(x,y);
         invalidate();
 
